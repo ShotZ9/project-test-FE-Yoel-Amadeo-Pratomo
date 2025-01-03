@@ -32,7 +32,7 @@ This project is a React-based web page that displays a list of "ideas" fetched f
 1.  Clone the repository:
 
     ```bash
-    git clone [https://github.com/](https://github.com/)[your-username]/[your-repo-name].git
+    git clone [https://github.com/](https://github.com/)ShotZ9/project-test-FE-Yoel-Amadeo-Pratomo.git
     ```
 
 2.  Navigate to the project directory:
