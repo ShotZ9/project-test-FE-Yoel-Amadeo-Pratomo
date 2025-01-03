@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# React Ideas Page
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React-based web page that displays a list of "ideas" fetched from a remote API. It features pagination, sorting, lazy loading of images, and persists user preferences (page, sort order, items per page) across page refreshes.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+*   **Data Fetching:** Fetches idea data from the `https://suitmedia-backend.suitdev.com/api/ideas` API.
+*   **Pagination:** Implements pagination to handle large datasets, allowing users to navigate through pages of ideas.
+*   **Sorting:** Allows users to sort ideas by "Newest" or "Oldest" based on the `published_at` date.
+*   **Show Per Page:** Users can select the number of items to display per page (10, 20, or 50).
+*   **State Persistence:** Maintains user preferences for page, sort order, and items per page using `localStorage`, so these settings are preserved across page refreshes.
+*   **Lazy Loading:** Uses `react-lazy-load-image-component` for efficient image loading, improving performance by loading images only when they are about to become visible in the viewport.
+*   **Image Error Handling:** Includes error handling for images that fail to load, displaying a placeholder instead.
+*   **Consistent Card Layout:** Ensures all idea cards have consistent dimensions, regardless of the original image sizes, using CSS `object-fit`.
+*   **Date Formatting:** Formats the `published_at` date into a user-friendly format (e.g., "20 JULI 2024").
+*   **Responsive Design:** Uses CSS Grid for a responsive card layout that adapts to different screen sizes.
+* **Scroll to Top Button:** Implements a floating button that smoothly scrolls the user back to the top of the page.
+* **Dynamic Title:** Uses `react-helmet` to dynamically update the page title.
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+*   React
+*   axios (for HTTP requests)
+*   react-router-dom (for routing)
+*   react-lazy-load-image-component
+*   react-icons
+*   react-helmet
+*   CSS
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+1.  Clone the repository:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    ```bash
+    git clone [https://github.com/](https://github.com/)[your-username]/[your-repo-name].git
+    ```
 
-### `npm run build`
+2.  Navigate to the project directory:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    ```bash
+    cd [your-repo-name]
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3.  Install dependencies:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
 
-### `npm run eject`
+## Development
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1.  Start the development server:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    ```bash
+    npm start
+    # or
+    yarn start
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2.  Open your browser at `http://localhost:3000`.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## API
 
-## Learn More
+The project uses the following API endpoint:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+*   `https://suitmedia-backend.suitdev.com/api/ideas`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+API Parameters:
 
-### Code Splitting
+*   `page[number]`: The page number to retrieve.
+*   `page[size]`: The number of items per page.
+*   `append[]`: Includes additional data (e.g., `small_image`, `medium_image`).
+*   `sort`: Sorts the results by `published_at` (`published_at` for oldest, `-published_at` for newest).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Example API Request: https://suitmedia-backend.suitdev.com/api/ideas?page[number]=1&page[size]=10&append[]=small_image&append[]=medium_image&sort=-published_at
 
-### Analyzing the Bundle Size
+## Further Improvements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+*   Implement proper loading indicators for API requests and image loading.
+*   Add more detailed error handling and user feedback.
+*   Improve styling and responsiveness.
+*   Add unit and integration tests.
+*   Implement server-side rendering (SSR) for better SEO.
 
-### Making a Progressive Web App
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Github : ShotZ9
