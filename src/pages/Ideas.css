@@ -1,0 +1,147 @@
+.list-posts {
+  padding: 1rem 8rem;
+  margin: 20px auto;
+}
+
+.top-list-posts {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.list-info-container {
+  display: flex;
+  justify-content: space-between;
+  /* Penting untuk memisahkan showing dan controls */
+  align-items: center;
+  /* Untuk menyejajarkan vertikal */
+  margin-bottom: 20px;
+  /* Jarak dengan daftar postingan */
+}
+
+.showing-info {
+  font-size: 14px;
+  color: #777;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.control-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 14px;
+}
+
+select {
+  border-radius: 50px; /* Set border radius to create an oval */
+  width: fit-content; /* Adjust width to fit content */
+  padding: 8px 20px;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.controls select:focus {
+  outline: none;
+  border-color: #66afe9;
+  box-shadow: 0 0 5px rgba(102, 175, 233, .6);
+}
+
+.rounded-select {
+  /* Base styles */
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px; /* Set the border radius for rounded corners */
+  background-color: white;
+  cursor: pointer;
+  /* Additional styling options (optional): */
+  font-size: 14px; /* Adjust font size */
+  color: #333; /* Adjust text color */
+  width: auto; /* Allow the select to fit its content */
+}
+
+/* Optional: Add a custom arrow using a background image or pseudo-element */
+.rounded-select::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 10px; /* Adjust arrow position */
+  transform: translateY(-50%); /* Center the arrow vertically */
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 8px solid #ccc; /* Adjust arrow color and size */
+}
+
+.posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.post-card {
+  width: calc(33% - 10px); /* Adjust as needed based on number of columns */
+  margin: 5px;
+  display: inline-block; /* Adjust as needed for layout */
+  position: relative; /* For aspect ratio trick */
+  overflow: hidden; /* Hide overflow content */
+}
+
+.post-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: #f4f4f4;
+  /* Untuk placeholder jika gambar gagal dimuat */
+}
+
+.post-card:after {
+  content: "";
+  display: block;
+  padding-bottom: 66.66%; /* Aspect ratio: 3:2 */
+}
+
+.post-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
+  color: #333; /* Adjust text color */
+}
+
+.pagination {
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.pagination button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pagination button:hover {
+  background-color: darkorange;
+}
+
+.pagination button.active {
+  background-color: #F96500;
+  color: white
+}
