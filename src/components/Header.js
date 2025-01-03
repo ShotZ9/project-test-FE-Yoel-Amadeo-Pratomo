@@ -9,18 +9,18 @@ const Header = () => {
   let lastScrollY = window.scrollY;
 
   const controlNavbar = () => {
-    if (window.scrollY > lastScrollY) {
-      setShow(false);
-    } else {
+    if (window.scrollY < lastScrollY) {
       setShow(true);
+    } else {
+      setShow(false);
     }
     lastScrollY = window.scrollY;
 
-    // Set status scroll
-    if (window.scrollY > 0) {
-        setIsScrolled(true);
+    // Update scrolled state only when scrolling up
+    if (window.scrollY > 0 && window.scrollY < lastScrollY) {
+      setIsScrolled(true);
     } else {
-        setIsScrolled(false);
+      setIsScrolled(false);
     }
   };
 
@@ -33,19 +33,19 @@ const Header = () => {
 
   return (
     <header className={`header ${show ? "show" : "hide"} ${isScrolled ? "scrolled" : ""}`}>
-        <nav>
-            <img src={logo} alt="Suitmedia Logo" className="logo" />
-            <ul>
-                <li><NavLink to="/" className={({ isActive }) => isActive ? 'active' : undefined}>Home</NavLink></li>
-                <li><NavLink to="/about" className={({ isActive }) => isActive ? 'active' : undefined}>About</NavLink></li>
-                <li><NavLink to="/services" className={({ isActive }) => isActive ? 'active' : undefined}>Services</NavLink></li>
-                <li><NavLink to="/ideas" className={({ isActive }) => isActive ? 'active' : undefined}>Ideas</NavLink></li>
-                <li><NavLink to="/careers" className={({ isActive }) => isActive ? 'active' : undefined}>Careers</NavLink></li>
-                <li><NavLink to="/contact" className={({ isActive }) => isActive ? 'active' : undefined}>Contact</NavLink></li>
-            </ul>
-        </nav>
+      <nav>
+        <img src={logo} alt="Suitmedia Logo" className="logo" />
+        <ul>
+          <li><NavLink to="/" className={({ isActive }) => isActive ? 'active' : undefined}>Home</NavLink></li>
+          <li><NavLink to="/about" className={({ isActive }) => isActive ? 'active' : undefined}>About</NavLink></li>
+          <li><NavLink to="/services" className={({ isActive }) => isActive ? 'active' : undefined}>Services</NavLink></li>
+          <li><NavLink to="/ideas" className={({ isActive }) => isActive ? 'active' : undefined}>Ideas</NavLink></li>
+          <li><NavLink to="/careers" className={({ isActive }) => isActive ? 'active' : undefined}>Careers</NavLink></li>
+          <li><NavLink to="/contact" className={({ isActive }) => isActive ? 'active' : undefined}>Contact</NavLink></li>
+        </ul>
+      </nav>
     </header>
-);
+  );
 };
 
 export default Header;

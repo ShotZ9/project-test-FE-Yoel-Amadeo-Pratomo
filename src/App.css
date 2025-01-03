@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+.floating-button {
+  position: fixed; /* Stay in place during scroll */
+  bottom: 20px;
+  right: 20px;
+  background-color: #F96500; /* Example color */
+  color: white;
+  border: none;
+  border-radius: 50%; /* Make it round */
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0.8; /* Slightly transparent */
+  transition: opacity 0.3s; /* Smooth transition for opacity */
+  z-index: 1000; /* Ensure it's on top */
+}
+
+.floating-button:hover {
+  opacity: 1;
+}

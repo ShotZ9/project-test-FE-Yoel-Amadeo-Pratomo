@@ -1,60 +1,69 @@
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #F96500;
-    z-index: 1000;
-    transition: transform 0.3s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #F96500;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
 }
-  
-  .header.hide {
-    transform: translateY(-100%);
-  }
-  
-  .header.show {
-    transform: translateY(0);
-  }
-  
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 2rem;
+
+.header.hide {
+  transform: translateY(-100%);
+}
+
+.header.show {
+  transform: translateY(0);
+  opacity: 0.9;
+}
+
+.header.scrolled {
+  background-color: rgba(249, 101, 0, 0.75);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
 }
 
 .logo {
-    height: 50px; /* Adjust as needed */
-    width: auto;
-    padding-left: 6.5rem;
-  }
+  height: 50px;
+  /* Adjust as needed */
+  width: auto;
+  padding-left: 6.5rem;
+}
 
-  nav ul {
-    list-style: none;
-    margin: 0;
-    display: flex;
-    padding-right: 6rem;
-  }
+nav ul {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  padding-right: 6rem;
+}
 
-  nav li {
-    margin-left: 20px; /* Adjust spacing */
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    transition: color 0.3s ease; /* Smooth color transition */
-    border-bottom: 2px solid transparent; /* Garis transparan sebagai placeholder */
-    transition: border-color 0.3s ease;
-  }
+nav li {
+  margin-left: 20px;
+  /* Adjust spacing */
+}
 
-  nav a:hover {
-    color: #ddd; /* Slightly lighter color on hover */
-  }
-  
-  nav a.active {
-    color: white;
-    border-bottom-color: white;
-  }
-  
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  /* Smooth color transition */
+  border-bottom: 2px solid transparent;
+  /* Garis transparan sebagai placeholder */
+  transition: border-color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ddd;
+  /* Slightly lighter color on hover */
+}
+
+nav a.active {
+  color: white;
+  border-bottom-color: white;
+}

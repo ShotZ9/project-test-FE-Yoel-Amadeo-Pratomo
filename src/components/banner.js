@@ -31,7 +31,7 @@ const Banner = ({ imageUrl }) => {
       <div className="banner-content">
         <div className="banner-text" style={{ transform: `translateY(${parallaxOffset * 0.6}px)` }}>{/* Parallax on text */}
           <h1>Ideas</h1>
-          <p>Where all out great things begin</p>
+          <p>Where all our great things begin</p>
         </div>
       </div>
     </div>
