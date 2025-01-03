@@ -38,7 +38,7 @@ This project is a React-based web page that displays a list of "ideas" fetched f
 2.  Navigate to the project directory:
 
     ```bash
-    cd [your-repo-name]
+    cd project-test-FE-Yoel-Amadeo-Pratomo
     ```
 
 3.  Install dependencies:
